@@ -8,6 +8,8 @@ web:
     - db:db
   environment:
     APP_ENV: dev
+  container_name: docker-web
+
 db:
   image: mysql
   ports:
@@ -19,3 +21,4 @@ db:
     MYSQL_PASSWORD: pass
     MYSQL_ROOT_PASSWORD: secret
     MYSQL_DATABASE: myapp
+  container_name: docker-db

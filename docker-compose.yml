@@ -25,5 +25,5 @@ mysql:
   volumes_from:
     - app
   env_file:
-    - ./docker/mysql/env.txt
+    - ./docker/mysql/database.env
   container_name: test-db

@@ -1,2 +1,5 @@
 [mysqld]
-sql_mode=''
+character-set-server = utf8
+
+[mysql]
+default-character-set=utf8

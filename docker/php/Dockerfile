@@ -1,5 +1,8 @@
 FROM php:5.6-apache
 
+RUN apt-get update && \
+  docker-php-ext-install pdo_mysql mysqli mbstring
+
 RUN apt-get update && apt-get install -y ssl-cert \
   --no-install-recommends && rm -r /var/lib/apt/lists/*
 

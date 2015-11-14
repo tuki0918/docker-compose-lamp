@@ -24,9 +24,6 @@ mysql:
     - ./docker/mysql/conf.d:/etc/mysql/conf.d
   volumes_from:
     - app
-  environment:
-    MYSQL_USER: user
-    MYSQL_PASSWORD: pass
-    MYSQL_ROOT_PASSWORD: secret
-    MYSQL_DATABASE: myapp
+  env_file:
+    - ./docker/mysql/env.txt
   container_name: test-db

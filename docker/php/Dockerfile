@@ -1,5 +1,5 @@
 FROM php:5.6-apache
-MAINTAINER tuki0918@gmail.com
+MAINTAINER tuki0918 <tuki0918@gmail.com>
 
 RUN apt-get update && apt-get install -y ssl-cert \
   --no-install-recommends && rm -r /var/lib/apt/lists/*
@@ -22,8 +22,7 @@ RUN a2enmod rewrite
 RUN a2enmod ssl
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    composer config -g github-oauth.github.com bb2e1fcd213e3b67f16f47c5bc72848bc1c7042d && \
-    composer global require phpunit/phpunit
+    composer config -g github-oauth.github.com bb2e1fcd213e3b67f16f47c5bc72848bc1c7042d
 
 ENV HOME /root
 ENV PATH $HOME/.composer/vendor/bin:$PATH

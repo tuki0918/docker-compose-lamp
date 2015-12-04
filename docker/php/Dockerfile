@@ -22,7 +22,7 @@ RUN a2enmod rewrite
 RUN a2enmod ssl
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    composer config -g github-oauth.github.com bb2e1fcd213e3b67f16f47c5bc72848bc1c7042d
+    composer config -g github-oauth.github.com 5525e9439a692dfc4081f2be50fa6e51e4c9ff77
 
 ENV HOME /root
 ENV PATH $HOME/.composer/vendor/bin:$PATH

@@ -1,4 +1,5 @@
 FROM php:5.6-apache
+MAINTAINER tuki0918@gmail.com
 
 RUN apt-get update && apt-get install -y ssl-cert \
   --no-install-recommends && rm -r /var/lib/apt/lists/*

@@ -30,4 +30,7 @@ ENV PATH $HOME/.composer/vendor/bin:$PATH
 EXPOSE 80
 EXPOSE 443
 
-RUN usermod -u 1000 www-data
+RUN usermod -u 1000 www-data \
+	# forward request and error logs to docker log collector
+	&& ln -sf /dev/stdout /var/log/apache2/access.log \
+	&& ln -sf /dev/stderr /var/log/apache2/error.log
